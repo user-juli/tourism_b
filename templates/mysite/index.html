@@ -1,0 +1,358 @@
+{% extends 'mysite/main.html' %}
+{% load static %}
+{% block content %}
+<!-- MAIN -->
+<main class="">
+
+  <!-- SECTION - DESTINOS -->
+  <section class="section-padding container" id="section-destinos">
+    <div class="text-center">
+      <p class="col-12 w-responsive mx-auto mb-5" data-aos="fade-down">Utilizamos las mejores herramientas tecnológicas
+        para crear estrategias de comunicación digital, que llevarán tu negocio a otro nivel, obteniendo
+        una mayor notoriedad y fidelización con tus clientes. De esta manera evitamos de que pierdas
+        tu tiempo o dinero.</p>
+
+      <h1 class="title-primary mb-5" data-aos="fade-up">DESTINOS</h1>
+    </div>
+
+    <div class="card-deck">
+      <!-- CARD - RÍOS -->
+      <div class="col">
+        <div class="card card-destinos h-100" data-aos="zoom-in" data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
+          <img src=" {% static 'images/destinations/d1.jpg' %} " class="card-img"	alt="rivers"/>
+          <div class="card-img-overlay d-flex align-items-center justify-content-center">
+            <a class="rivers" href="rivers.html"><h2 class="card-title title-destino">Ríos</h2></a>
+          </div>
+        </div>
+      </div>
+      <!-- CARD - PLAYAS -->
+      <div class="col">
+        <div class="card card-destinos h-100" data-aos="zoom-in" data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
+          <img src=" {% static 'images/destinations/d2.jpg' %} " class="card-img" alt="..."/>
+          <div class="card-img-overlay d-flex align-items-center justify-content-center">
+            <h2 class="card-title title-destino">Playas</h2>
+          </div>
+        </div>
+      </div>
+      <!-- CARD - CIUDAD -->
+      <div class="col">
+        <div class="card card-destinos h-100" data-aos="zoom-in" data-aos-offset="300"
+        data-aos-easing="ease-in-sine">
+          <img src="{% static 'images/destinations/d3.jpg' %} " class="card-img" alt="..."/>
+          <div class="card-img-overlay d-flex align-items-center justify-content-center">
+            <h2 class="card-title title-destino">Ciudad</h2>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SECTION - GUIA DE BUENAVENTURA -->
+  <section class="section-padding section-guia">
+    <div class="text-center">
+      <h1 class="title-secundary mb-5" data-aos="fade-down">GUIA DE BUENAVENTURA</h1>
+    </div>
+
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-4">
+        <!-- GUIA - INFORMACIÓN -->
+        <div class="col mb-4 ml-sm-0" data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine">
+            <div class="tguia">
+              <div class="mb-4 pt-4"><i class="fas fa-info-circle fa-3x"></i> </div>
+                <a class="puntos" href="information.html">Información</a>
+            </div>
+        </div>
+        <!-- GUIA - COMO LLEGAR -->
+        <div class="col mb-4 ml-sm-0" data-aos="zoom-in" data-aos-offset="200"
+        data-aos-easing="ease-in-sine">
+        <div class="tguia">
+          <div class="mb-4 pt-4"><i class="fas fa-map-signs fa-3x"></i></div>
+            <a href="#" class="puntos">Cómo llegar</a>
+          </div>
+        </div>
+        <!-- GUIA - TRANSPORTE -->
+        <div class="col mb-4 ml-sm-0" data-aos="zoom-in" data-aos-offset="200"
+            data-aos-easing="ease-in-sine">
+        <div class="tguia">
+          <div class="mb-4 pt-4"><i class="fas fa-car fa-3x"></i></div>
+            <a href="#" class="puntos">Transporte</a>
+          </div>
+        </div>
+        <!-- GUIA - ACTIVIDADES -->
+        <div class="col mb-4 ml-sm-0" data-aos="zoom-in" data-aos-offset="200"
+            data-aos-easing="ease-in-sine">
+        <div class="tguia">
+          <div class="mb-4 pt-4"><i class="fas fa-ticket-alt fa-3x"></i></div>
+            <a href="#" class="puntos">Actividades</a>
+          </div>
+        </div>
+        <!-- GUIA - DÓNDE DORMIR -->
+        <div class="col mb-4 ml-sm-0" data-aos="zoom-in" data-aos-offset="200"
+            data-aos-easing="ease-in-sine">
+        <div class="tguia">
+          <div class="mb-4 pt-4"><i class="fas fa-bed fa-3x"></i></div>
+            <a href="#" class="puntos">Dónde dormir</a>
+          </div>
+        </div>
+        <!-- GUIA - DÓNDE COMER -->
+        <div class="col mb-4 ml-sm-0" data-aos="zoom-in" data-aos-offset="200"
+            data-aos-easing="ease-in-sine">
+        <div class="tguia">
+          <div class="mb-4 pt-4"><i class="fas fa-utensils fa-3x"></i></div>
+            <a href="#" class="puntos">Dónde comer</a>
+          </div>
+        </div>
+        <!-- GUIA - MAPA -->
+        <div class="col mb-4 ml-sm-0" data-aos="zoom-in" data-aos-offset="200"
+            data-aos-easing="ease-in-sine">
+          <div class="tguia">
+            <div class="mb-4 pt-4"><i class="fas fa-map-marked-alt fa-3x"></i></div>
+              <a href="#" class="puntos">Mapa</a>
+            </div>
+          </div>
+          <!-- GUIA - ESTADÍSTICAS -->
+          <div class="col mb-4 ml-sm-0" data-aos="zoom-in" data-aos-offset="200"
+            data-aos-easing="ease-in-sine">
+          <div class="tguia">
+            <div class="mb-4 pt-4"><i class="fas fa-chart-pie fa-3x"></i></div>
+              <a href="#" class="puntos">Estadísticas</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SECTION - ¿POR QUÉ VIAJAR A BUENAVENTURA? -->
+  <section class="section-padding">
+    <div class="text-center">
+        <h1 class="title-primary mb-5" data-aos="fade-up">¿Por qué viajar a Buenaventura?</h1>
+    </div>
+
+    <div class="container">
+      <p class="w-responsive mx-auto mb-5 text-center" data-aos="fade-left">
+        El Distrito Especial, Industrial, Portuario, Biodiverso y Ecoturístico de Buenaventura es el puerto mas
+        importante de Colombia y uno de los 10 puertos mas importantes de América Latina. Es un destino en
+        crecimiento que cuenta actualmente con la primera certificación de Bandera Azul, y el reconocimiento por
+        la UNESCO como una de las 64 Ciudades Creativas del mundo por su expresión gastronómica.
+      </p>
+      <p class="w-responsive mx-auto mb-5 text-center" data-aos="fade-right">
+        El desarrollo reciente de nuestra ciudad puerto es un esfuerzo interinstitucional comprometido, que impulsa
+        al gremio turístico y cultural con el propósito de posicionar Buenaventura como el mayor destino cultural y
+        ecoturístico de Colombia.
+      </p>
+      <p class="w-responsive mx-auto mb-5 text-center" data-aos="fade-left">
+        El distrito de mar y selva de Buenaventura hace parte de la franja biogeográfica del Chocó, la reserva más
+        grande de recursos naturales de Colombia y que además cuenta con la segunda mayor biodiversidad del mundo,
+        una riqueza biolígica y un potencial ecoturístico incalculable que promueve el crecimiento económico de la
+        región, la inclusión y el desarrollo social.
+      </p>
+      <p class="w-responsive mx-auto mb-5 text-center" data-aos="fade-right">
+        El Pacífico pluriétnico y multicultural nos brinda la oportunidad de acercarnos a las comunidades indígenas y
+        negras de sus territorios colectivos. Culturas con memoria ancestral, patrimonio inmaterial que define nuestra
+        identidad colombiana y nos abre a un mundo de valores estéticos, musicales y culinarios aún por explorar.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- SECTION - ACTIVIDADES -->
+  <section class="section-padding section-actividades">
+    <div class="text-center">
+      <h1 class="title-secundary mb-5" data-aos="fade-down">ACTIVIDADES</h1>
+    </div>
+
+    <div class="top-content">
+      <div class="container-fluid">
+        <div id="carousel-example" class="carousel slide" data-ride="carousel" data-aos="zoom-in" data-aos-offset="200"
+        data-aos-easing="ease-in-sine">
+          <div class="carousel-inner row w-100 mx-auto" role="listbox">
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+            <div class="card card-actividad" style="width: 18rem">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Actividad 1</h5>
+                  <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the
+                      card's content.
+                  </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-actividad" style="width: 18rem">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/183.jpg" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Actividad 2</h5>
+                  <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the
+                      card's content.
+                  </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-actividad" style="width: 18rem">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Actividad 3</h5>
+                  <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the
+                      card's content.
+                  </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-actividad" style="width: 18rem">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/185.jpg" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Actividad 4</h5>
+                  <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the
+                      card's content.
+                  </p>
+              </div>
+          </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-actividad" style="width: 18rem">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/186.jpg" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Actividad 5</h5>
+                  <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the
+                      card's content.
+                  </p>
+              </div>
+          </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-actividad" style="width: 18rem">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/187.jpg" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Actividad 6</h5>
+                  <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the
+                      card's content.
+                  </p>
+              </div>
+          </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-actividad" style="width: 18rem">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/188.jpg" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Actividad 7</h5>
+                  <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the
+                      card's content.
+                  </p>
+              </div>
+          </div>
+          </div>
+
+          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card card-actividad" style="width: 18rem">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/189.jpg" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Actividad 8</h5>
+                  <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the
+                      card's content.
+                  </p>
+              </div>
+          </div>
+          </div>
+
+          </div>
+          <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+          <span aria-hidden="true"><i class="fas fa-chevron-left fa-2x"></i></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+          <span aria-hidden="true"><i class="fas fa-chevron-right fa-2x"></i></span>
+          <span class="sr-only">Next</span>
+        </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SECTION - BLOG -->
+  <section class="section-padding section-blog">
+    <div class="text-center">
+        <h1 class="title-primary mb-5" data-aos="fade-up">CONOCE MÁS DE BUENAVENTURA</h1>
+    </div>
+
+    <div class="container">
+      <div class="card-deck" data-ride="carousel">
+
+        <div class="card card-blog" data-aos="zoom-in" data-aos-offset="300">
+          <div class="card-img">
+            <img src="{% static 'images/blog/b1.jpg' %} " class="card-img-top" alt="..."/>
+          </div>
+            <div class="card-body">
+                <a href=""><h5 class="card-title">Card title</h5></a>
+                <p class="card-text">
+                    This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </p>
+            </div>
+        </div>
+
+        <div class="card card-blog" data-aos="zoom-in" data-aos-offset="300">
+          <div class="card-img">
+            <img src=" {% static 'images/blog/b2.jpg' %} " class="card-img-top" alt="..."/>
+          </div>
+            <div class="card-body">
+                <a href=""><h5 class="card-title">Card title</h5></a>
+                <p class="card-text">
+                    This card has supporting text below as a natural lead-in to additional content.
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </p>
+            </div>
+        </div>
+
+        <div class="card card-blog" data-aos="zoom-in" data-aos-offset="300">
+          <div class="card-img">
+            <img src=" {% static 'images/blog/b3.jpg' %} " class="card-img-top" alt="..."/>
+          </div>
+            <div class="card-body">
+                <a href=""><h5 class="card-title">Card title</h5></a>
+                <p class="card-text">
+                    This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This card has even longer content than the first to show
+                    that equal height action.
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+  </section>
+
+</main>
+
+{% endblock content %}

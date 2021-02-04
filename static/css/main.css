@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+  html {
+		overflow-x: hidden;
+		scroll-behavior: smooth;
+  }
+
+  body {
+    background: #fff;
+				font-weight: 400;
+				font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: subpixel-antialiased;
+    line-height: 25px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+		}
+
+	h1 { font-size: 40px;}
+
+.title-primary {
+	color: #0c6f2d;
+	font-weight: 700;
+	letter-spacing: -2px;
+}
+
+.title-secundary {
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: -2px;
+}
+
+p {
+	color: #393939;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* .contenedor {
+	margin: auto;
+	width: 90%;
+	max-width: 1200px;
+} */
+
+/* ------------------------- */
+/* MENÚ */
+/* ------------------------- */
+.menu {
+	background: #0c6f2d;
+}
+
+.menu .contenedor-botones-menu {
+	/* display: flex; */
+	display: none;
+	justify-content: space-between;
+}
+
+.menu .contenedor-botones-menu button {
+	color: #fff;
+	padding: 10px 20px;
+	border: 1px solid transparent;
+	display: inline-block;
+	cursor: pointer;
+	background: none;
+}
+
+.menu .contenedor-botones-menu button:hover {
+	border: 1px solid rgba(255,255,255, .4);
+}
+
+.menu .contenedor-botones-menu .btn-menu-cerrar {
+	display: none;
+}
+
+.menu .contenedor-botones-menu .btn-menu-cerrar.activo {
+	display: inline-block;
+}
+
+.menu .contenedor-enlaces-nav {
+	display: flex;
+	align-items: center;
+}
+
+.menu-2 .contenedor-enlaces-nav-2 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.menu .contenedor-enlaces-nav a {
+	color: #fff;
+	padding: 12px 40px;
+}
+
+.menu-2 .contenedor-enlaces-nav-2 a {
+	color: #0c6f2d;
+	padding: 20px;
+}
+
+.social:hover {
+	background-color: #0c6f2d;
+}
+
+.social:hover i {
+	color: #e6db00;
+	font-size: 30px;
+}
+
+.menu .contenedor-enlaces-nav a:hover {
+	background: #e6db00;
+	color: #0c6f2d;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.menu-2 .navbar-brand {
+	font-weight: 700;
+	padding: 20px;
+}
+
+/* ------------------------- */
+/* DROPDOWN - GUÍA TURÍSTICA */
+/* ------------------------- */
+.contenedor-grid {
+	position: relative;
+}
+
+.grid {
+	width: 100%;
+	display: none;
+	position: absolute;
+	top: 5px;
+	z-index: 1000;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr;
+	grid-template-areas: "categorias subcategorias subcategorias subcategorias";
+}
+
+.grid.activo {
+	display: grid;
+}
+
+.grid::before {
+	content: "";
+	display: block;
+	background: transparent;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid #e6db00;
+	position: absolute;
+	top: -5px;
+	left: 95px;
+}
+
+.grid > div {
+	background: #e6db00;
+	box-shadow: 0px 3px 6px rgba(0,0,0,.10);
+}
+
+/* ------------------------- */
+/* Categorias */
+/* ------------------------- */
+
+.grid .btn-regresar {
+	background: #0c6f2d;
+	color: #e6db00;
+	border: none;
+	padding: 10px;
+	border-radius: 3px;
+	margin: 20px;
+	cursor: pointer;
+	display: none;
+}
+
+.grid .btn-regresar i {
+	margin-right: 10px;
+}
+
+.grid .categorias {
+	grid-area: categorias;
+	padding-top: 5px;
+	min-height: 200px;
+	overflow: auto;
+}
+
+.grid .categorias .subtitulo {
+	display: none;
+}
+
+.grid .categorias a {
+	color: #0c6f2d;
+	font-size: 16px;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 40px;
+}
+
+.grid .categorias a i {
+	display: none;
+}
+
+.grid .categorias a:hover {
+	color: #0c6f2d;
+	font-weight: bold;
+}
+
+.grid .categorias a:hover i {
+	display: inline-block;
+}
+
+/* ------------------------- */
+/* Subcategorias */
+/* ------------------------- */
+
+.grid .contenedor-subcategorias {
+	grid-area: subcategorias;
+}
+
+.grid .subcategoria {
+	display: none;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	height: 100%;
+}
+
+.grid .subcategoria.activo {
+	display: grid;
+}
+
+.grid .subcategoria img {
+	width: 200%;
+	vertical-align: top;
+	height: 100%;
+	object-fit: cover;
+}
+
+.grid .enlaces-subcategoria {
+	padding-top: 10px;
+	height: 100%;
+	max-height: 300px;
+	overflow: auto;
+}
+
+.grid .enlaces-subcategoria a {
+	color: #0c6f2d;
+	display: block;
+	font-size: 16px;
+	padding: 10px 20px;
+}
+
+.grid .enlaces-subcategoria a:hover {
+	color: #0c6f2d;
+	font-weight: 600;
+}
+
+.grid .subtitulo {
+	font-size: 18px;
+	font-weight: 600;
+	color: #0c6f2d;
+	padding: 10px 20px;
+}
+
+.grid .banner-subcategoria a {
+	display: block;
+	height: 100%;
+}
+
+/* ------------------------- */
+/* DROPDOWN - IDIOMA */
+/* ------------------------- */
+.dropbtn {
+	color: #0c6f2d;
+	padding: 20px 20px !important;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #e6db00;
+	min-width: 16px;
+	margin-top: 17px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	font-weight: 600;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover a i {
+	color: #e6db00;
+	font-size: 30px;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: #0c6f2d;
+ padding: 20px 10px;
+}
+
+/* ------------------------- */
+/* HEADER */
+/* ------------------------- */
+
+.card-header {
+	background: url("../images/banners/principal-banner-2.jpg");
+	background-size: cover;
+}
+
+.title-home-banner {
+	font-size: 8vw;
+	font-weight: 700;
+	letter-spacing: -6px;
+	text-shadow: 2px 2px 5px #000;
+}
+
+.btn-down-section {
+	padding-top: 60px;
+	margin-top: 90px;
+}
+
+.btn-circle {
+	width: 60px;
+	height: 60px;
+	padding: 10px 16px;
+	font-size: 30px;
+	line-height: 1.33;
+	border-radius: 35px;
+	background: #0c6f2d;
+	-webkit-animation: mover .5s infinite  alternate;
+	animation: mover .5s infinite  alternate;
+}
+
+.btn-circle:hover {
+background: #e6db00;
+color: #0c6f2d !important;
+animation: none;
+}
+
+@-webkit-keyframes mover {
+	0% { transform: translateY(0); }
+	100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+	0% { transform: translateY(0); }
+	100% { transform: translateY(-10px); }
+}
+
+/* ------------------------- */
+/* SECCIONES */
+/* ------------------------- */
+.section-padding {
+padding: 55px 0;
+}
+
+/* SECCIÓN - DESTINO */
+
+.card-destinos {
+	overflow: hidden;
+}
+
+.card-destinos img {
+	transition: transform .5s ease;
+}
+
+.card-destinos img, .card-destinos, .card-img-overlay {
+	border-radius: 18px !important;
+}
+
+.card-destinos .card-img-overlay .title-destino {
+font-weight: 700;
+color: #fff;
+text-shadow: 2px 2px 5px #000;
+visibility: hidden;
+opacity: 0;
+}
+
+.card-destinos:hover img {
+	transform: scale(1.5);
+	filter: blur(2px);
+}
+
+.card-destinos .card-img-overlay:hover .title-destino {
+	opacity: 1;
+	visibility: visible;
+	transition: visibility 0s linear, opacity 400ms linear;
+	}
+
+.card-destinos .card-img-overlay:hover  {
+	background: #0c6f2d7c;
+	cursor: pointer;
+	}
+
+
+
+	/* SECCIÓN - GUÍA DE BUENAVENTURA */
+
+	.section-guia {
+			background: #0c6f2d;
+			color: #fff;
+		}
+
+		.tguia {
+			background-color: #fff;
+			cursor: pointer;
+			border-radius: 10px;
+			text-align: center;
+			height: 150px;
+			}
+
+		.tguia .fas {
+			color: #0c6f2d;
+		}
+
+	.tguia:hover {
+			background-color: #e6db00 !important;
+	}
+
+	.puntos, .puntos:hover {
+			color: #0c6f2d !important;
+			font-size: 18px;
+			font-weight: 600;
+	}
+
+		/* SECCIÓN - ACTIVIDADES */
+
+		.section-actividades {
+			background: #0c6f2d;
+			color: #fff;
+		}
+
+		.top-content {
+			width: 100%;
+		}
+
+		.carousel-control-next, .carousel-control-prev {
+			border: 0;
+		}
+
+		.carousel-control-next:hover, .carousel-control-prev:hover {
+			background: rgba(0, 0, 0, 0.486);
+		}
+
+		.card-actividad .card-title {
+			color: #0c6f2d;
+			font-weight: 700 !important;
+		}
+
+		.card-actividad .card-text {
+			display: none;
+		}
+
+		.card-actividad:hover .card-body{
+			background: #e6db00;
+			position: absolute;
+			top: -5px;
+			height: 278px;
+			border-radius: .25rem;
+			transition: 200ms ease;
+			cursor: pointer;
+		}
+
+		.card-actividad:hover .card-title{
+			padding-top: 20px;
+			}
+
+		.card-actividad:hover .card-text{
+		display: inline;
+		color: #000;
+		}
+
+/* SECCIÓN - BLOG */
+
+.section-blog .card-img {
+	overflow: hidden;
+}
+
+.card-blog img {
+	transition: transform .5s ease;
+}
+
+.card-blog:hover img {
+	transform: scale(1.5);
+}
+
+.section-blog .card-title {
+	color: #0c6f2d;
+	font-weight: 600 !important;
+}
+
+/* ------------------------- */
+/* FOOTER */
+/* ------------------------- */
+
+.page-footer {
+	background: rgb(12,111,45);
+	background: linear-gradient(180deg, rgba(12,111,45,1) 45%, rgba(6,56,23,1) 100%);
+	padding-top: 40px;
+}
+
+.page-footer p, .page-footer a {
+	font-size: 15px;
+}
+
+.page-footer a:hover {
+	color: #e6db00;
+}
+
+/* ------------------------- */
+/* MENÚ SIDEBAR - GUÍA TURÍSTICA */
+/* ------------------------- */
+
+.msb {
+	width: 200px;
+	background-color: #F5F7F9;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: auto;
+	min-height: 90%;
+	overflow-y: auto;
+	white-space: nowrap;
+	height: 90%;
+	z-index: 1;
+	border-right: 1px solid #ddd;
+}

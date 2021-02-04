@@ -1,0 +1,165 @@
+/* ------------------------- */
+/* LG */
+/* ------------------------- */
+@media screen and (max-width: 1000px) {
+
+	/* MENÚ */
+	.menu .contenedor-enlaces-nav {
+		padding: 0 10px;
+	}
+
+	.menu .contenedor {
+		width: 100%;
+	}
+}
+
+/* ------------------------- */
+/* XS O MOBILE */
+/* ------------------------- */
+
+@media screen and (max-width: 800px) {
+
+	/* MENÚ */
+	.menu .contenedor {
+		width: 92%;
+	}
+
+	.menu .contenedor-botones-menu {
+		display: flex;
+	}
+
+	.menu {
+		position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+	}
+
+	.menu .contenedor-enlaces-nav {
+		padding: 30px;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		position: fixed;
+		left: 0;
+		background: #0c6f2d;
+		height: 100vh;
+		width: 80%;
+		z-index: 2000;
+		transition: .3s ease all;
+		transform: translate(-100%);
+	}
+
+	.menu .contenedor-enlaces-nav.activo {
+		transform: translate(0%);
+	}
+
+	.menu-2 .contenedor-enlaces-nav-2 {
+		display: none;
+	}
+
+	.menu .btn-guia {
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+	}
+
+ .menu .contenedor-enlaces-nav a:hover {
+  width: 100%;
+ }
+
+	.menu .enlaces {
+		width: 100%;
+	}
+
+	.menu .enlaces a {
+		display: block;
+		margin: 10px 0;
+		padding: 10px;
+	}
+
+	.grid {
+		display: grid;
+		transition: .3s ease all;
+		transform: translateX(-100%);
+		z-index: 3000;
+		width: 80%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		grid-template-areas: "categorias categorias categorias categorias";
+	}
+
+	.grid.activo {
+		transform: translateX(0%);
+	}
+
+	.grid::before {
+		display: none;
+	}
+
+	.grid .btn-regresar {
+		display: inline-block;
+	}
+
+	.grid .categorias .subtitulo {
+		display: block;
+	}
+
+	.grid .contenedor-subcategorias {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transition: .3s ease all;
+		transform: translateX(-100%);
+		overflow: auto;
+	}
+
+	.grid .contenedor-subcategorias.activo {
+		transform: translateX(0%);
+	}
+
+	.grid .contenedor-subcategorias .subcategoria {
+		grid-template-columns: 1fr;
+	}
+
+	.grid .contenedor-subcategorias .banner-subcategoria {
+		width: 100%;
+		min-height: 250px;
+		max-height: 350px;
+	}
+
+	.grid .enlaces-subcategoria {
+		min-height: 50vh;
+		overflow: auto;
+	}
+
+/* HEADER */
+
+/* .header-primary {
+	height: 80vw;
+} */
+
+.title-home-banner {
+	font-size: 10vw;
+}
+
+.btn-down-section {
+	display: none;
+}
+
+		/* SECCIÓN - ACTIVIDADES */
+
+		.carousel-item {
+		margin-left: 35px;
+		}
+	.card-actividad:hover .card-body{
+		top: -5px;
+		height: 268px !important;
+	}
+
+}
