@@ -22,7 +22,7 @@
         data-aos-easing="ease-in-sine">
           <img src=" {% static 'images/destinations/d1.jpg' %} " class="card-img"	alt="rivers"/>
           <div class="card-img-overlay d-flex align-items-center justify-content-center">
-            <a class="rivers" href="rivers.html"><h2 class="card-title title-destino">Ríos</h2></a>
+            <a class="rivers" href="{% url 'rivers' %}"><h2 class="card-title title-destino">Ríos</h2></a>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
         data-aos-easing="ease-in-sine">
           <img src=" {% static 'images/destinations/d2.jpg' %} " class="card-img" alt="..."/>
           <div class="card-img-overlay d-flex align-items-center justify-content-center">
-            <h2 class="card-title title-destino">Playas</h2>
+            <a class="rivers" href="{% url 'beaches' %}"><h2 class="card-title title-destino">Playas</h2></a>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
         data-aos-easing="ease-in-sine">
           <img src="{% static 'images/destinations/d3.jpg' %} " class="card-img" alt="..."/>
           <div class="card-img-overlay d-flex align-items-center justify-content-center">
-            <h2 class="card-title title-destino">Ciudad</h2>
+            <a class="rivers" href=""><h2 class="card-title title-destino">Ciudad</h2></a>
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@
         <div class="col mb-4 ml-sm-0" data-aos="zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine">
             <div class="tguia">
               <div class="mb-4 pt-4"><i class="fas fa-info-circle fa-3x"></i> </div>
-                <a class="puntos" href="information.html">Información</a>
+                <a class="puntos" href="{% url 'information' %}">Información</a>
             </div>
         </div>
         <!-- GUIA - COMO LLEGAR -->

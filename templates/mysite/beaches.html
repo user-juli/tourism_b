@@ -1,0 +1,22 @@
+{% extends 'mysite/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="card mb-3" style="max-width: 1540px;">
+  <div class="row no-gutters">
+    {% for beach in beaches %}
+    <div class="col-md-4">
+      <img class="thumbnail" src="{{beach.imageURL}}" id="myImg" alt="{{beach.title}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{beach.title}}</h5>
+        <p class="card-text">{{beach.text}}</p>
+        <p class="card-text"><small class="text-muted">{{ beach.published_date }}</small></p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

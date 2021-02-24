@@ -1,0 +1,22 @@
+{% extends 'mysite/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="card mb-3" style="max-width: 1540px;">
+  <div class="row no-gutters">
+    {% for river in rivers %}
+    <div class="col-md-4">
+      <img class="thumbnail" src="{{river.imageURL}}" id="myImg" alt="{{river.title}}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{river.title}}</h5>
+        <p class="card-text">{{river.text}}</p>
+        <p class="card-text"><small class="text-muted">{{ river.published_date }}</small></p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
