@@ -1,27 +1,58 @@
-{% extends 'mysite/main.html' %}
+{% extends 'mysite/menu.html' %}
 {% load static %}
 {% block content %}
 
-<section class="section-padding">
+<div class="content-header">
+  <img src="{% static 'images/banners/info-banner.jpg' %}" />
+  <div class="centrado"><h1>Información de Buenaventura</h1></div>
+</div>
+
+<div class="paragraph">
   <div class="text-center">
-      <h1 class="title-primary mb-5" data-aos="fade-up">Historia de Buenaventura</h1>
+    <p class="col-12 w-responsive mx-auto mb-5">Si deseas viajar a Buenaventura deberias leer esta información practica sobre su historia, cultura, localidades, clima y mas.
+    Descubre interesantes datos de Buenaventura y sacale el maximo partido a tu viaje.</p>
   </div>
+  <section>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Historia <i class="fas fa-history"></i></h5>
+            <p class="card-text">Descubre la historia de Buenaventura desde su fundacion hasta lo mas vigente. Conoce
+            el pasado presente y futuro de este distrito especial.</p>
+            <a href="{% url 'history' %}" class="card-link">Saber mas</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Localidades <i class="fas fa-home"></i></h5>
+            <p class="card-text">Conoce las localidades isla y continentes de este distrito especial, incluyendo todas
+            sus comunas y barrios.</p>
+            <a href="#" class="card-link">Saber mas</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Dias Festivos <i class="fas fa-calendar-check"></i></h5>
+            <p class="card-text">Si estas planeando viajar a Buenaventura durante alguna de sus fiestas, este es el mejor
+            lugar para que lo sepas.</p>
+            <a href="#" class="card-link">Saber mas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-  <div class="container">
-    <p class="w-responsive mx-auto mb-5 text-justify" data-aos="fade-left">
-      <b>Los orígenes del puerto:</b> En 1540, el gobernador Andagoya le encargó a su capitán Juan de Ladrillero la fundación la ciudad de Buenaventura, en el cauce bajo del río Anchicayá. Es decir, se trataba de un puerto fluvial y no marítimo. Los primeros años de vida del nuevo centro urbano no fueron fáciles. Los españoles soportaron con pesadumbre el rigor del clima, la existencia de insectos y otros animales, la escasez de alimentos y el ataque casi cotidiano de los indios de la región. En 1542, los pocos vecinos de Buenaventura escribieron a las autoridades de Popayán a las que solicitaron socorro, pues no podían “sustentar” la ciudad debido a que los indios los atacaban constantemente. El teniente Juan de Cabrera envió ayuda desde Cali, pero con la condición de que se despoblara la ciudad de Buenaventura, tal y como se hizo.
-    </p>
-    <p class="w-responsive mx-auto mb-5 text-justify" data-aos="fade-right">
-      Durante lo restante del periodo colonial, Buenaventura siguió siendo el principal puerto del Nuevo Reino de Granada sobre el Océano Pacífico. El descubrimiento de yacimientos auríferos en los ríos Raposo, Dagua, Anchicayá y Cajambre permitió que se establecieran reales de minas explotados por esclavos negros e iniciara una incipiente colonización de la zona. Como en otras regiones de las tierras bajas del Pacífico, el encuentro de tres grupos distintos: indígena, africano y español produjo una nueva sociedad en la que cada uno de estos grupos aportó para su configuración.
-    </p>
-    <p class="w-responsive mx-auto mb-5 text-justify" data-aos="fade-left">
-      <b>Un nuevo puerto para una vieja bahía:</b> Tal como lo sabían los funcionarios españoles del ocaso del periodo colonial, Buenaventura era un punto estratégico para el imperio hispánico. Se trataba del puerto más septentrional del Pacífico suramericano y conectaba la zona minera del Chocó con la agrícola y ganadera de la gobernación de Popayán. Durante la Independencia, Buenaventura se convirtió en un lugar importante para la guerra, pues era el punto de partida o llegada de las tropas que pretendían salir al Caribe a través de la ruta de los ríos San Juan y Atrato.
-    </p>
-    <p class="w-responsive mx-auto mb-5 text-justify" data-aos="fade-right">
-      La abolición de la esclavitud acarreó un proceso de poblamiento negro a lo largo de los ríos que descienden de la Cordillera Occidental. La colonización se vio reforzada con el inicio de ciclos extractivos, principalmente de caucho, tagua y maderas, y se continuó con la extracción de oro y platino. Esto produjo que Buenaventura aumentara su densidad demográfica y su importancia económica.
-    </p>
+
+  <div class="advance-buttons">
+    <h3>Tambien te puede interesar</h3>
+    <a href="#" class="btn"><i class="fas fa-arrow-alt-to-left"></i>Estadisticas</a>
+    <a href="{% url 'howtoget' %}" class="btn">Como Llegar<i class="fas fa-arrow-alt-to-right"></i></a>
   </div>
-
-</section>
 
 {% endblock %}

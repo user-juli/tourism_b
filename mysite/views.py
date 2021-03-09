@@ -7,11 +7,17 @@ def index(request):
 def information(request):
     return render(request,'mysite/information.html')
 
+def history(request):
+    return render(request, 'mysite/history.html')
+
 def contact(request):
     return render(request,'mysite/contact.html')
 
 def map(request):
     return render(request,'mysite/map.html')
+
+def howtoget(request):
+    return render(request, 'mysite/howtoget.html')
 
 def destination(request):
     destinations = Destination.objects.all()

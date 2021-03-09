@@ -1,28 +1,41 @@
-{% extends 'mysite/main.html' %}
+{% extends 'mysite/menu.html' %}
 {% load static %}
 {% block content %}
 
-<div class="card mb-3" style="max-width: 1540px;">
-  <div class="row no-gutters">
-    {% for hotel in hotels %}
-    <div class="col-md-4">
-      <img class="thumbnail" src="{{hotel.imageURL}}" id="myImg" alt="{{hotel.title}}">
-    </div>
-    <div class="col-md-5">
-      <div class="card-body">
-        <h5 class="card-title">{{hotel.title}}</h5>
-        <p class="card-text"><i class="fas fa-map-marker-alt">Ver mapa</i>
-            <i class="fas fa-location-arrow"></i>calle 10 # 2-40 - Buenaventura
-            <i class="fas fa-phone-alt"></i>+57 304 3409555</p>
+<div class="content-header">
+  <img src="{% static 'images/banners/dormir-banner.jpg' %}" />
+  <div class="centrado"><h1>Hoteles en Buenaventura</h1></div>
+</div>
+
+<div class="paragraph">
+  <div class="card mb-3" style="max-width: 1540px;">
+    <div class="row no-gutters">
+      {% for hotel in hotels %}
+      <div class="col-md-4">
+        <img class="thumbnail" src="{{hotel.imageURL}}" id="myImg" alt="{{hotel.title}}">
       </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card-body">
-        <p class="card-text">{{hotel.text}}</p>
+      <div class="col-md-5">
+        <div class="card-body">
+          <h5 class="card-title">{{hotel.title}}</h5>
+          <p class="card-text"><i class="fas fa-map-marker-alt">Ver mapa</i>
+              <i class="fas fa-location-arrow"></i>calle 10 # 2-40 - Buenaventura
+              <i class="fas fa-phone-alt"></i>+57 304 3409555</p>
+        </div>
       </div>
+      <div class="col-md-3">
+        <div class="card-body">
+          <p class="card-text">{{hotel.text}}</p>
+        </div>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
+</div>
+
+<div class="advance-buttons">
+  <h3>Tambien te puede interesar</h3>
+  <a href="#" class="btn"><i class="fas fa-arrow-alt-to-left"></i>Actividades</a>
+  <a href="{% url 'restaurant' %}" class="btn">Donde Comer<i class="fas fa-arrow-alt-to-right"></i></a>
 </div>
 
 {% endblock %}

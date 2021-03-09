@@ -1,0 +1,33 @@
+{% extends 'mysite/menu.html' %}
+{% load static %}
+{% block content %}
+
+<div class="content-header">
+  <img src="{% static 'images/banners/llegar-banner.jpg' %}" />
+  <div class="centrado"><h1>Como llegar a Buenaventura</h1></div>
+</div>
+
+<div class="paragraph">
+  <section>
+    <h1 class="font-effect-anaglyph">Llegar a Buenaventura en vehiculo</h1>
+    <p>Si deseas viajar por carretera a Buenaventura, te recomendamos usar el servicio de transporte público que ofrecen las terminales de transporte de las ciudades mas cercanas.</p>
+    <p>Otra alternativa a la que recurre mucha gente es el transporte privado, en caso de quieras mayor comodidad y rapidez, de esta manera su precio es más elevado.</p>
+    <p>Una vez que tengas claro a qué servicio de transporte usar para llegar a Buenaventura, falta conocer los mejores servicios para viajar:</p>
+    <img src="{% static 'images/logos/astransportes-logo.png' %}" alt="ASTransportes">
+    <img src="{% static 'images/logos/corredorp-logo.png' %}" alt="Corredor del Pacifico">
+  </section>
+  <section>
+    <h1>Llegar a Buenaventura en avion</h1>
+    <p>Buenaventura tiene solamente un aeropuerto principal: Gerardo Tobar López. Este aeropuerto local es la forma de poder viajar al distrito en avión.</p>
+    <p>Este aeropuerto tiene operación comercial por parte de las aerolíneas Aexpa, Satena hacia diferentes destinos nacionales al Aeropuerto de Pizarro (Bajo Baudó - Chocó), Aeropuerto El Caraño (Quibdo - Chocó) y Matecaña (Pereira, Risaralda).</p>
+    <img src="{% static 'images/logos/satena-logo.png' %}" alt="Satena">
+  </section>
+</div>
+
+<div class="advance-buttons">
+  <h3>Tambien te puede interesar</h3>
+  <a href="{% url 'information' %}" class="btn"><i class="fas fa-arrow-alt-to-left"></i>Informacion</a>
+  <a href="#" class="btn">Transporte<i class="fas fa-arrow-alt-to-right"></i></a>
+</div>
+
+{% endblock %}
