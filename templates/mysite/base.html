@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Disfruta Buenaventura{% endblock %}</title>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% load static %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@3.6.0/dist/photo-sphere-viewer.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href=" {% static 'css/main.css' %} "/>
+    <link rel="stylesheet" href=" {% static 'css/main-responsive.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} "/>
+
+  </head>
+  <body>
+    <!-- MENU-2 -->
+  	<nav class="menu-2" id="menu-2" aria-label="menu">
+  		<div class="container-fluid contenedor-enlaces-nav-2">
+        <a class="navbar-brand" href="/">DISFRUTA BUENAVENTURA</a>
+
+  			<div class="enlaces">
+  				<div class="dropdown">
+  					<a class="dropbtn"><i class="fas fa-globe-americas fa-lg"></i></a>
+  					<div class="dropdown-content">
+							<a href="#">Inglés</a>
+  					</div>
+  			 </div>
+  				<a href="" class="social"><i class="fab fa-facebook fa-lg"></i></a>
+  				<a href="" class="social"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="{% url 'post_list' %}" class="social"><i class="fas fa-blog fa-lg"></i></a>
+	     </div>
+
+			</div>
+  	</nav>
+
+	   <!-- MENU -->
+  	<nav class="menu" id="menu" aria-label="menu">
+  		<div class="container-fluid contenedor-botones-menu">
+  			<button id="btn-menu-barras" class="btn-menu-barras"><i class="fas fa-bars fa-lg"></i></button>
+  			<button id="btn-menu-cerrar" class="btn-menu-cerrar"><i class="fas fa-times fa-lg"></i></button>
+  		</div>
+
+  		<div class="container-fluid contenedor-enlaces-nav">
+				<a class="btn-guia" id="btn-guia">Guía Turística</a>
+				<a href="{% url 'destination' %}">Destinos</a>
+				<a href="{% url 'posts:myblog' %}">Blog</a>
+				<a href="{% url 'contact' %}">Contáctenos</a>
+			</div>
+  		<!-- DROPDOWN - GUÍA TURÍSTICA -->
+  		<div class="container-fluid contenedor-grid">
+  			<div class="grid" id="grid">
+  				<div class="categorias">
+  					<button class="btn-regresar"><i class="fas fa-arrow-left"></i> Regresar</button>
+  					<h3 class="subtitulo">Categorias</h3>
+
+  					<a href="#" data-categoria="informacion">Información <i class="fas fa-angle-right"></i></a>
+  					<a href="#" data-categoria="como-llegar">Como llegar <i class="fas fa-angle-right"></i></a>
+  					<a href="#" data-categoria="transporte">Transporte <i class="fas fa-angle-right"></i></a>
+  					<a href="#" data-categoria="actividades">Actividades <i class="fas fa-angle-right"></i></a>
+  					<a href="#" data-categoria="donde-dormir">Donde dormir <i class="fas fa-angle-right"></i></a>
+  					<a href="#" data-categoria="donde-comer">Donde comer <i class="fas fa-angle-right"></i></a>
+  					<a href="#" data-categoria="mapa">Mapa <i class="fas fa-angle-right"></i></a>
+  					<a href="#" data-categoria="estadisticas">Estadísticas <i class="fas fa-angle-right"></i></a>
+  				</div>
+          <!-- CATEGORIAS -->
+		      <div class="contenedor-subcategorias">
+            <!-- CATEGORIA INFORMACIÓN -->
+    				<div class="subcategoria" data-categoria="informacion">
+    					<div class="enlaces-subcategoria">
+    						<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+    						<h3 class="subtitulo">Información</h3>
+    						<a href="#">Historia</a>
+    						<a href="#">Localidades</a>
+    						<a href="#">Días Festivos</a>
+    					</div>
+    					<div class="banner-subcategoria">
+    						<a href="#">
+    							<img src=" {% static 'images/banners/info-banner.jpg' %} " alt="">
+    						</a>
+    					</div>
+    				</div>
+            <!-- CATEGORIA COMO LLEGAR -->
+  					<div class="subcategoria" data-categoria="como-llegar">
+  						<div class="enlaces-subcategoria">
+  							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+  							<h3 class="subtitulo">Como llegar</h3>
+  							<a href="#">Terminal de transporte</a>
+  							<a href="#">Aeropuerto</a>
+  						</div>
+
+  						<div class="banner-subcategoria">
+  							<a href="#">
+  								<img src=" {% static 'images/banners/llegar-banner.jpg' %} " alt="">
+  							</a>
+  						</div>
+  					</div>
+            <!-- CATEGORIA TRASNPORTE -->
+  					<div class="subcategoria" data-categoria="transporte">
+  						<div class="enlaces-subcategoria">
+  							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+  							<h3 class="subtitulo">Transporte</h3>
+  							<a href="#">Taxi</a>
+  							<a href="#">Microbus</a>
+  							<a href="#">Campero</a>
+  						</div>
+
+  						<div class="banner-subcategoria">
+  							<a href="#">
+  								<img src=" {% static 'images/banners/transporte-banner.jpg' %} " alt="">
+  							</a>
+  						</div>
+  					</div>
+            <!-- CATEGORIA ACTIVIDADES -->
+  					<div class="subcategoria" data-categoria="actividades">
+  						<div class="enlaces-subcategoria">
+  							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+  							<h3 class="subtitulo">Actividades</h3>
+  							<a href="#">Ver todas las actividades</a>
+  						</div>
+
+  						<div class="banner-subcategoria">
+  							<a href="#">
+  								<img src=" {% static 'images/banners/actividades-banner.jpg' %} " alt="">
+  							</a>
+  						</div>
+  					</div>
+            <!-- CATEGORIA DONDE DORMIR -->
+  					<div class="subcategoria" data-categoria="donde-dormir">
+  						<div class="enlaces-subcategoria">
+  							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+  							<h3 class="subtitulo">Donde dormir</h3>
+  							<a href="{% url 'hotel' %}">Ver todos los lugares de alojamiento</a>
+  						</div>
+
+  						<div class="banner-subcategoria">
+  							<a href="#">
+  								<img src=" {% static 'images/banners/dormir-banner.jpg' %} " alt="">
+  							</a>
+  						</div>
+  					</div>
+            <!-- CATEGORIA DONDE COMER -->
+  					<div class="subcategoria" data-categoria="donde-comer">
+  						<div class="enlaces-subcategoria">
+  							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+  							<h3 class="subtitulo">Donde comer</h3>
+  							<a href="{% url 'restaurant' %}">Ver todos los restaurantes</a>
+  						</div>
+
+  						<div class="banner-subcategoria">
+  							<a href="#">
+  								<img src=" {% static 'images/banners/dormir-banner.jpg' %} " alt="">
+  							</a>
+  					</div>
+				    </div>
+            <!-- CATEGORIA MAPA -->
+  					<div class="subcategoria" data-categoria="mapa">
+  						<div class="enlaces-subcategoria">
+  							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+  							<h3 class="subtitulo">Mapa</h3>
+  							<a href="{% url 'map' %}">Ver mapa turístico de Buenaventura</a>
+  						</div>
+
+  						<div class="banner-subcategoria">
+  							<a href="#">
+  								<img src=" {% static 'images/banners/dormir-banner.jpg' %} " alt="">
+  							</a>
+  						</div>
+  					</div>
+            <!-- CATEGORIA ESTADISTICAS -->
+  					<div class="subcategoria" data-categoria="estadisticas">
+  						<div class="enlaces-subcategoria">
+  							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
+  							<h3 class="subtitulo">Estadísticas</h3>
+  							<a href="#">Conoce el observatorio turístico de Buenaventura</a>
+  						</div>
+
+  						<div class="banner-subcategoria">
+  							<a href="#">
+  								<img src=" {% static 'images/banners/estadisticas-banner.jpg' %} " alt="">
+  							</a>
+  						</div>
+  		      </div>
+		      </div>
+	      </div>
+		  </div>
+	  </nav>
+
+    <div class="container">
+      <br>
+      {% block content %}
+
+      {% endblock content %}
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="page-footer">
+     <div class="container-fluid text-center text-md-left">
+      <div class="row text-center text-md-left mt-3 pb-3">
+        <div class="col-lg-4 col-md-4 mt-md-0 mt-3 mx-auto">
+          <h5 class="text-uppercase font-weight-bold">TURISMO BUENAVENTURA</h5>
+          <p class="text-white mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem blanditiis fugiat
+            totam cupiditate inventore optio minima eum dolorum! Hic quisquam reprehenderit sapiente.</p>
+        </div>
+        <div class="col-lg-3 col-md-3 mb-3 mt-md-0 mt-3">
+          <h5 class="text-uppercase font-weight-bold">BUENAVENTURA</h5>
+          <ul class="list-unstyled">
+            <li><a href="{% url 'destination' %}">Destinos</a></li>
+            <li><a href="#!">Guía Turística</a></li>
+            <li><a href="{% url 'post_list' %}">Blog</a></li>
+            <li><a href="{% url 'contact' %}">Contáctenos</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-3 mb-3">
+          <h5 class="text-uppercase font-weight-bold">SOPORTE</h5>
+          <ul class="list-unstyled">
+            <li><a href="#!">Preguntas frecuentes</a></li>
+            <li><a href="#!">Condiciones legales</a></li>
+            <li><a href="#!">Aviso legal</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3">
+      <a href="" class=""><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="" class="ml-4"><i class="fab fa-instagram fa-2x"></i></a>
+    </div>
+   </footer>
+
+   {% bootstrap_javascript jquery='full' %}
+   <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+ </body>
+</html>

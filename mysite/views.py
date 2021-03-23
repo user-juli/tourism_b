@@ -1,5 +1,7 @@
-from django.shortcuts import render
-from .models import Destination,Hotel,Restaurant
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Place,Hotel,Restaurant,ImagesPlace,ImagesHotel
+from django.views.generic import DetailView
+from django.http import HttpResponse
 
 def index(request):
     return render(request,'mysite/index.html')
@@ -20,15 +22,15 @@ def howtoget(request):
     return render(request, 'mysite/howtoget.html')
 
 def destination(request):
-    destinations = Destination.objects.all()
+    destinations = Place.objects.all()
     return render(request,'mysite/destinations.html',{'destinations':destinations})
 
 def rivers(request):
-    rivers = Destination.objects.filter(category='RI')
+    rivers = Place.objects.filter(category='RI')
     return render(request,'mysite/rivers.html',{'rivers':rivers})
 
 def beaches(request):
-    beaches = Destination.objects.filter(category='BE')
+    beaches = Place.objects.filter(category='BE')
     return render(request,'mysite/beaches.html',{'beaches':beaches})
 
 def hotel(request):
@@ -38,3 +40,33 @@ def hotel(request):
 def restaurant(request):
     restaurants = Restaurant.objects.all()
     return render(request,'mysite/restaurants.html',{'restaurants':restaurants})
+
+class PlaceDetailView(DetailView):
+    template_name = 'mysite/detail_d.html'
+    model = Place
+    context_object_name = 'place'
+    slug_field = 'url'
+    slug_url_kwarg = 'url'
+
+    def get_queryset(self):
+        return self.model.objects.filter(url=self.kwargs['url'])
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['imagesplace'] = ImagesPlace.objects.filter(place=self.get_object()).all()
+        return context
+
+class HotelDetailView(DetailView):
+    template_name = 'mysite/detail_h.html'
+    model = Hotel
+    context_object_name = 'hotel'
+    slug_field = 'url'
+    slug_url_kwarg = 'url'
+
+    def get_queryset(self):
+        return self.model.objects.filter(url=self.kwargs['url'])
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['imageshotel'] = ImagesHotel.objects.filter(hotel=self.get_object()).all()
+        return context

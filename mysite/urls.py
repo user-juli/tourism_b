@@ -13,4 +13,6 @@ urlpatterns = [
     path('destination', views.destination, name='destination'),
     path('hotel', views.hotel, name='hotel'),
     path('restaurant', views.restaurant, name='restaurant'),
+    path('destination/<slug:url>/',views.PlaceDetailView.as_view(),name='detail'),
+    path('hotel/<slug:url>/',views.HotelDetailView.as_view(),name='detail'),
 ]

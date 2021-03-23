@@ -8,23 +8,19 @@
 </div>
 
 <div class="paragraph">
-  <div class="card mb-3" style="max-width: 1540px;">
-    <div class="row no-gutters">
+  <div class="content-body">
+    <p>El alojamiento es una de las piezas claves que se necesita tener listo a la hora del viaje. En Buenaventura encontrarás una gran variedad de lugares para que puedas descansar comodamente.</p>
+  </div>
+  <h1 class="content-title">Hoteles en Buenaventura</h1>
+  <div class="row">
+    <div class="card-columns">
       {% for hotel in hotels %}
-      <div class="col-md-4">
-        <img class="thumbnail" src="{{hotel.imageURL}}" id="myImg" alt="{{hotel.title}}">
-      </div>
-      <div class="col-md-5">
+      <div class="card card-block">
+        <img class="card-img-top" src="{{hotel.imageURL}}" alt="{{hotel.title}}">
         <div class="card-body">
           <h5 class="card-title">{{hotel.title}}</h5>
-          <p class="card-text"><i class="fas fa-map-marker-alt">Ver mapa</i>
-              <i class="fas fa-location-arrow"></i>calle 10 # 2-40 - Buenaventura
-              <i class="fas fa-phone-alt"></i>+57 304 3409555</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card-body">
-          <p class="card-text">{{hotel.text}}</p>
+          <p class="card-text">Precio minimo: {{hotel.minimal_price}}</p>
+          <p class="card-text"><small class="text-muted"><a href="{% url 'detail' hotel.url %}">Ver mas</a></small></p>
         </div>
       </div>
       {% endfor %}

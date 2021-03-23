@@ -41,6 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mysite.apps.MysiteConfig',
     'blog.apps.BlogConfig',
+    # Rich text editor
+    'ckeditor',
+    # Local apps
+    'posts',
+    'users',
+    'categories',
+    'comments',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +134,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 
 MEDIA_URL ='/images/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
