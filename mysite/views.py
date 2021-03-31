@@ -3,8 +3,11 @@ from .models import Place,Hotel,Restaurant,ImagesPlace,ImagesHotel
 from django.views.generic import DetailView
 from django.http import HttpResponse
 
+from posts.models import Post
+
 def index(request):
-    return render(request,'mysite/index.html')
+    blogs = Post.objects.all().order_by('-id')[:3]
+    return render(request,'mysite/index.html',{'blogs':blogs})
 
 def information(request):
     return render(request,'mysite/information.html')

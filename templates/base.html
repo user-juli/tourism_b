@@ -72,9 +72,14 @@
             <!-- Side Widget -->
             <div class="card my-4">
                <h5 class="card-header">Side Widget</h5>
-               <div class="card-body">
-                  You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-               </div>
+               {% for blog in blogs %}
+               <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="{% url 'posts:detail' blog.url%}" class="link">{{blog.title}}</a></h5>
+                  <p class="card-text"><small class="text-muted">Escrito el {{blog.created}}</small></p>
+                </div>
+              </div>
+               {% endfor %}
             </div>
          </div>
       </div>

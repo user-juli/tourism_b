@@ -9,6 +9,7 @@ from comments.models import Comment
 
 from comments.forms import CreateCommentForm
 
+
 class PostsFeedView(ListView):
     template_name = 'posts/index.html'
     model = Post
@@ -20,6 +21,7 @@ class PostsFeedView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
+        context['blogs'] = Post.objects.all().order_by('-id')
         return context
 
 class PostDetailView(DetailView):
@@ -37,8 +39,8 @@ class PostDetailView(DetailView):
         context['categories'] = Category.objects.all()
         context['comments'] = Comment.objects.filter(post=self.get_object()).all()
         context['form_comments'] = CreateCommentForm()
+        context['blogs'] = Post.objects.all().order_by('-id')
         return context
-
 
 @login_required
 def save_comment(request):
