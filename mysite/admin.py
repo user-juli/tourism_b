@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Place,Hotel,Restaurant,ImagesPlace,Activity,ImagesHotel
+from . models import Place,Hotel,Restaurant,ImagesPlace,Activity,ImagesHotel,ImagesActivity
 
 
 admin.site.register(Restaurant)
@@ -36,6 +36,18 @@ class HotelAdmin(admin.ModelAdmin):
         form = super(HotelAdmin, self).get_form(request, obj, **kwargs)
         return form
 
+class ImageInlineActivity(admin.TabularInline):
+    model = ImagesActivity
+    readonly_fields = ('image_preview',)
+
 @admin.register(Activity)
 class ActivityAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'image_header')
+    inlines = [
+        ImageInlineActivity
+    ]
+
+    def get_form(self, request, obj=None, **kwargs):
+        self.exclude = ('url', )
+        form = super(ActivityAdmin, self).get_form(request, obj, **kwargs)
+        return form

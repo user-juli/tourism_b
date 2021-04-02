@@ -171,121 +171,29 @@
       <div class="container-fluid">
         <div id="carousel-example" class="carousel slide" data-ride="carousel" data-aos="zoom-in" data-aos-offset="200"
         data-aos-easing="ease-in-sine">
-          <div class="carousel-inner row w-100 mx-auto" role="listbox">
+          <div class="carousel-inner  row w-100 mx-auto" role="listbox">
 
-          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-            <div class="card card-actividad" style="width: 18rem">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" class="card-img-top" alt="..."/>
-              <div class="card-body">
-                <h5 class="card-title">Actividad 1</h5>
-                  <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
-                  </p>
+            <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+              <div class="card card-deck card-columns card-actividad" style="width: 18rem">
+                {% for activity in activities %}
+                <img src="{{ activity.image_header.url }}" class="card-img-top"/>
+                <div class="card-body">
+                  <h5 class="card-title">{{activity.title}}</h5>
+                    <p class="card-text">{{activity.text|safe|truncatechars:50}}</p>
+                </div>
+                {% endfor %}
               </div>
             </div>
-          </div>
-
-          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card card-actividad" style="width: 18rem">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/183.jpg" class="card-img-top" alt="..."/>
-              <div class="card-body">
-                <h5 class="card-title">Actividad 2</h5>
-                  <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
-                  </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card card-actividad" style="width: 18rem">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..."/>
-              <div class="card-body">
-                <h5 class="card-title">Actividad 3</h5>
-                  <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
-                  </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card card-actividad" style="width: 18rem">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/185.jpg" class="card-img-top" alt="..."/>
-              <div class="card-body">
-                <h5 class="card-title">Actividad 4</h5>
-                  <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
-                  </p>
-              </div>
-          </div>
-          </div>
-
-          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card card-actividad" style="width: 18rem">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/186.jpg" class="card-img-top" alt="..."/>
-              <div class="card-body">
-                <h5 class="card-title">Actividad 5</h5>
-                  <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
-                  </p>
-              </div>
-          </div>
-          </div>
-
-          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card card-actividad" style="width: 18rem">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/187.jpg" class="card-img-top" alt="..."/>
-              <div class="card-body">
-                <h5 class="card-title">Actividad 6</h5>
-                  <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
-                  </p>
-              </div>
-          </div>
-          </div>
-
-          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card card-actividad" style="width: 18rem">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/188.jpg" class="card-img-top" alt="..."/>
-              <div class="card-body">
-                <h5 class="card-title">Actividad 7</h5>
-                  <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
-                  </p>
-              </div>
-          </div>
-          </div>
-
-          <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card card-actividad" style="width: 18rem">
-              <img src="https://mdbootstrap.com/img/new/standard/nature/189.jpg" class="card-img-top" alt="..."/>
-              <div class="card-body">
-                <h5 class="card-title">Actividad 8</h5>
-                  <p class="card-text">
-                      Some quick example text to build on the card title and make up the bulk of the
-                      card's content.
-                  </p>
-              </div>
-          </div>
-          </div>
 
           </div>
           <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-          <span aria-hidden="true"><i class="fas fa-chevron-left fa-2x"></i></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-          <span aria-hidden="true"><i class="fas fa-chevron-right fa-2x"></i></span>
-          <span class="sr-only">Next</span>
-        </a>
+            <span aria-hidden="true"><i class="fas fa-chevron-left fa-2x"></i></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+            <span aria-hidden="true"><i class="fas fa-chevron-right fa-2x"></i></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
     </div>

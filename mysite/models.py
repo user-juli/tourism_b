@@ -101,6 +101,7 @@ class Activity(models.Model):
     text = RichTextField()
     image_header = models.ImageField(upload_to='activities/', default = 'activities/None/no-img.jpg')
     url = models.SlugField(max_length=255, unique=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
         return '{} by @{}'.format(self.title, self.image_header)
@@ -108,3 +109,24 @@ class Activity(models.Model):
     def save(self, *args, **kwargs):
         self.url = slugify(self.title)
         super(Activity, self).save(*args, **kwargs)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image_header.url
+        except:
+            url = ''
+        return url
+
+def upload_gallery_activity(instance, filename):
+    return f"activities/{instance.activity.title}/{filename}"
+
+class ImagesActivity(models.Model):
+    image = models.ImageField(upload_to=upload_gallery_activity)
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='images')
+
+    def image_preview(self):
+        if self.image:
+            return mark_safe('<img src="{0}" width="150" height="150" />'.format(self.image.url))
+        else:
+            return '(No image)'

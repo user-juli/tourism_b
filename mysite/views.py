@@ -1,13 +1,21 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Place,Hotel,Restaurant,ImagesPlace,ImagesHotel
-from django.views.generic import DetailView
+from .models import Place,Hotel,Restaurant,Activity,ImagesPlace,ImagesHotel,ImagesActivity
+from django.views.generic import DetailView,ListView
 from django.http import HttpResponse
 
 from posts.models import Post
 
-def index(request):
-    blogs = Post.objects.all().order_by('-id')[:3]
-    return render(request,'mysite/index.html',{'blogs':blogs})
+class ActivityFeedView(ListView):
+    template_name = 'mysite/index.html'
+    model = Post
+    context_object_name = 'blogs'
+    queryset = Post.objects.all().order_by('-id')[:3]
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['activities'] = Activity.objects.all().order_by('-id')
+        return context
+
 
 def information(request):
     return render(request,'mysite/information.html')
