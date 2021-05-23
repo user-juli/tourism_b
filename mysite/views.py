@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 from posts.models import Post
 
-class ActivityFeedView(ListView):
+class IndexFeedView(ListView):
     template_name = 'mysite/index.html'
     model = Post
     context_object_name = 'blogs'
@@ -32,9 +32,10 @@ def map(request):
 def howtoget(request):
     return render(request, 'mysite/howtoget.html')
 
+
 def destination(request):
-    destinations = Place.objects.all()
-    return render(request,'mysite/destinations.html',{'destinations':destinations})
+    places = Place.objects.all()
+    return render(request,'mysite/destinations.html',{'places':places})
 
 def rivers(request):
     rivers = Place.objects.filter(category='RI')
@@ -43,10 +44,6 @@ def rivers(request):
 def beaches(request):
     beaches = Place.objects.filter(category='BE')
     return render(request,'mysite/beaches.html',{'beaches':beaches})
-
-def hotel(request):
-    hotels = Hotel.objects.all()
-    return render(request,'mysite/hotels.html',{'hotels':hotels})
 
 def restaurant(request):
     restaurants = Restaurant.objects.all()
@@ -67,6 +64,14 @@ class PlaceDetailView(DetailView):
         context['imagesplace'] = ImagesPlace.objects.filter(place=self.get_object()).all()
         return context
 
+class HotelFeedView(ListView):
+    template_name = 'mysite/hotels.html'
+    model = Hotel
+    ordering = ('-minimal_price',)
+    paginate_by = 5
+    context_object_name = 'hotels'
+    queryset = Hotel.objects.all()
+
 class HotelDetailView(DetailView):
     template_name = 'mysite/detail_h.html'
     model = Hotel
@@ -80,4 +85,5 @@ class HotelDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['imageshotel'] = ImagesHotel.objects.filter(hotel=self.get_object()).all()
+        context['hotels'] = Hotel.objects.filter(minimal_price)
         return context

@@ -167,36 +167,36 @@
       <h1 class="title-secundary mb-5" data-aos="fade-down">ACTIVIDADES</h1>
     </div>
 
-    <div class="top-content">
-      <div class="container-fluid">
-        <div id="carousel-example" class="carousel slide" data-ride="carousel" data-aos="zoom-in" data-aos-offset="200"
-        data-aos-easing="ease-in-sine">
-          <div class="carousel-inner  row w-100 mx-auto" role="listbox">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
 
-            <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-              <div class="card card-deck card-columns card-actividad" style="width: 18rem">
-                {% for activity in activities %}
-                <img src="{{ activity.image_header.url }}" class="card-img-top"/>
-                <div class="card-body">
-                  <h5 class="card-title">{{activity.title}}</h5>
-                    <p class="card-text">{{activity.text|safe|truncatechars:50}}</p>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-
+      <div class="carousel-inner">
+        {% for activity in activities %}
+        <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+          <img src="{{ activity.image_header.url }}" >
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{activity.title}}</h5>
+            <p>{{activity.text|safe|truncatechars:50}}</p>
           </div>
-          <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-            <span aria-hidden="true"><i class="fas fa-chevron-left fa-2x"></i></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-            <span aria-hidden="true"><i class="fas fa-chevron-right fa-2x"></i></span>
-            <span class="sr-only">Next</span>
-          </a>
         </div>
+        {% endfor %}
       </div>
+
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
     </div>
+
 
   </section>
 

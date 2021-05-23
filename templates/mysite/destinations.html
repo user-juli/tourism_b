@@ -9,16 +9,16 @@
     </div>
   </div>
   <div class="card mb-3 destination" style="max-width: 1540px;">
-    {% for destination in destinations %}
+    {% for place in places %}
     <div class="row no-gutters">
       <div class="col-md-4">
-        <img class="thumbnail" src="{{ MEDIA_URL}} {{ destination.imageURL }}" id="myImg" alt="{{destination.title}}">
+        <img class="thumbnail" src="{{ MEDIA_URL}} {{ place.imageURL }}" id="myImg" alt="{{place.title}}">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">{{destination.title}}</h5>
-          <p class="card-text">{{destination.text|safe|truncatechars:300}}</p>
-          <a href="{% url 'detail' destination.url %}" class="btn btn-primary">Leer más &rarr;</a>
+          <h5 class="card-title">{{place.title}}</h5>
+          <p class="card-text">{{place.text|safe|truncatechars:300}}</p>
+          <a href="{% url 'detail' place.url %}" class="btn btn-primary">Leer más &rarr;</a>
         </div>
       </div>
     </div>

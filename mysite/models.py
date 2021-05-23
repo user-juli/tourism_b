@@ -50,6 +50,7 @@ class Hotel(models.Model):
     text = models.TextField()
     image_header = models.ImageField(upload_to='hotels/', default = 'hotels/None/no-img.jpg')
     minimal_price = models.IntegerField()
+    website = models.TextField()
     url = models.SlugField(max_length=255, unique=True)
 
     def __str__(self):
